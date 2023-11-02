@@ -6,7 +6,7 @@ const Home = () => {
 
     const [users, setUsers] = useState([]);
 
-    const { id } = useParams()
+    const {id} = useParams()
 
     useEffect(() => {
         loadUsers();
@@ -18,9 +18,9 @@ const Home = () => {
         setUsers(result.data);
     };
 
-    const deleteUser = async () => {
-        await axios.delete(`http://localhost:8080/user/${id}`);
-        loadUsers();
+    const deleteUser = async (id) => {
+        await axios.delete(`http://localhost:8080/user/${id}`)
+        loadUsers()
     }
 
     return (
